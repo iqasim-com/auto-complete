@@ -8,7 +8,7 @@ export interface InputProps {
     value?: string
 }
 export interface ListProps {
-    title: string
+    title: any
 }
 export interface AutoSuggestionsProps {
     suggestion: string
