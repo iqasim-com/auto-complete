@@ -1,16 +1,17 @@
 // React imports
 import React from "react"
-// Context imports
-import { useApiContext } from "../../../context/ApiDataContext"
+// Hooks imports
+import { useApiContext } from "../../../hooks/useApiContext"
 // Atoms imports
 import List from "../../atoms/List/List"
+import { ApiResponseProps } from "../../../hooks/types"
 
 /**
  * Component to render a dropdown list with auto-suggested items.
  * @param searchTerm The search term used to filter items in the dropdown.
  * @returns JSX element representing the Dropdown component.
  */
-const Dropdown = ({ searchTerm }: any): JSX.Element => {
+const Dropdown = ({ searchTerm }: {searchTerm: string}): JSX.Element => {
   const { state } = useApiContext()
 
   /**
@@ -39,7 +40,7 @@ const Dropdown = ({ searchTerm }: any): JSX.Element => {
   return (
     <>
       <ul>
-        {state.apiData?.map((data: any) => (
+        {state.apiData?.map((data: ApiResponseProps) => (
           <List title={makeSearchCharBold(data.title, searchTerm)} key={data.id} />
         ))}
       </ul>

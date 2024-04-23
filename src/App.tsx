@@ -5,7 +5,7 @@ import Input from './components/atoms/Input/Input'
 // Molecules imports
 import Dropdown from './components/molecules/Dropdown/Dropdown'
 // Context imports
-import { useApiContext } from './context/ApiDataContext'
+import { useApiContext } from './hooks/useApiContext'
 
 /**
  * Main component of the application responsible for rendering UI and managing user interactions.
