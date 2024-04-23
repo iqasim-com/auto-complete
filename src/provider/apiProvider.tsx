@@ -1,5 +1,5 @@
 // React imports
-import React, { useReducer } from 'react'
+import React, { useEffect, useReducer, useState } from 'react'
 // Hooks imports
 import { initialState, reducer } from '../reducers/reducer'
 // Context imports
@@ -10,12 +10,20 @@ import { ChildrenProps } from '../config/SharedTypes'
 import { constants } from '../config/constants'
 
 /**
- * Component responsible for providing API-related state and functions to its children components.
- * @param children The child components to be wrapped by the ApiProvider.
+ * Provider component responsible for managing API data fetching and state management.
+ * @param children The child components wrapped by the provider.
  * @returns JSX element representing the ApiProvider component.
  */
 const ApiProvider: React.FC<ChildrenProps> = ({ children }) => {
+  const [data, setData] = useState([])
   const [state, dispatch] = useReducer(reducer, initialState)
+
+  useEffect(() => {
+    // Fetch all products and save in local state
+    fetch(`${constants.backend.baseUrl}${constants.backend.endpoints.getProducts}`)
+      .then((res) => res.json())
+      .then((res) => setData(res))
+  }, [])
 
   const fetchData = async (title: string) => {
     // Check if title is not empty
@@ -25,10 +33,6 @@ const ApiProvider: React.FC<ChildrenProps> = ({ children }) => {
     }
     dispatch({ type: 'FETCH_START' })
     try {
-      // Fetch all products
-      const response = await fetch(`${constants.backend.baseUrl}${constants.backend.endpoints.getProducts}`)
-      const data = await response.json()
-
       // Filter products based on title
       const filteredData = data.filter((product: { title: string }) => {
         return product.title.toLowerCase().startsWith(title.toLowerCase())

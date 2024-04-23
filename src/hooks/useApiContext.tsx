@@ -1,4 +1,6 @@
+// React imports
 import { useContext } from "react"
+// Context imports
 import { ApiContext } from "../context/ApiDataContext"
 
 /**

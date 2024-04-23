@@ -31,7 +31,7 @@ const App = () => {
       <div className='input-wrapper'>
         <Input
           type='text'
-          placeholder='Search TODOs'
+          placeholder='Search Products'
           onChangeHandler={(event) => handleChange(event)} />
         <span>{state.isLoading ? <>Fetching...</> : ''}</span>
       </div>
