@@ -1,5 +1,5 @@
 // React imports
-import { useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 // Atoms imports
 import Input from './components/atoms/Input/Input'
 // Molecules imports
@@ -7,14 +7,23 @@ import Dropdown from './components/molecules/Dropdown/Dropdown'
 // Context imports
 import { useApiContext } from './context/ApiDataContext'
 
+/**
+ * Main component of the application responsible for rendering UI and managing user interactions.
+ * @returns JSX element representing the App component.
+ */
 const App = () => {
   const { state } = useApiContext()
   const { fetchData } = useApiContext()
   const [searchTerm, setSearchTerm] = useState('')
 
-  const handleChange = (e: any) => {
-    setSearchTerm(e.target.value)
-    fetchData(e.target.value)
+  /**
+   * Event handler function called when the input value changes.
+   * Updates the search term state and fetches data based on the new search term.
+   * @param event The event object representing the input change event.
+   */
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value)
+    fetchData(event.target.value)
   }
 
   return (

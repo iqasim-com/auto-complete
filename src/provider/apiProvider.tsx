@@ -9,6 +9,11 @@ import { ChildrenProps } from '../config/SharedTypes'
 // Constants imports
 import { constants } from '../config/constants'
 
+/**
+ * Component responsible for providing API-related state and functions to its children components.
+ * @param children The child components to be wrapped by the ApiProvider.
+ * @returns JSX element representing the ApiProvider component.
+ */
 const ApiProvider: React.FC<ChildrenProps> = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
 

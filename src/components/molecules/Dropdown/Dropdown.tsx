@@ -5,6 +5,11 @@ import { useApiContext } from "../../../context/ApiDataContext"
 // Atoms imports
 import List from "../../atoms/List/List"
 
+/**
+ * Component to render a dropdown list with auto-suggested items.
+ * @param searchTerm The search term used to filter items in the dropdown.
+ * @returns JSX element representing the Dropdown component.
+ */
 const Dropdown = ({ searchTerm }: any): JSX.Element => {
   const { state } = useApiContext()
 
