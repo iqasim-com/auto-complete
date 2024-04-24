@@ -1,5 +1,7 @@
 {
   "name": "auto-complete",
+  "homepage": "./",
+  "author": "Muhammad Qasim",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
