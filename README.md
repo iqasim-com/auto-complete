@@ -97,8 +97,10 @@ The `components` directory follows an atomic design pattern, consisting of `atom
 
 ## Local environment setup
 Clone the repo and run
+### `npm install`
+    Above command will install all the packages required for the application.
 ### `npm start` :
-    Above command will `install node modules`, and `start` application.
+    Above command will `start` application.
     After successfully installed,
     Open **http://localhost:3000** to view it in the browser.
 
