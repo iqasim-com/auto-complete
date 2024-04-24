@@ -1,6 +1,7 @@
 # Description
 Auto-complete component in React TypeScript.
-![Application Overview](image.png)
+![image](https://github.com/iqasim-com/auto-complete/assets/23281307/c7154ce3-625d-49a0-95ac-1b5b72aacf1c)
+
 
 ## Folder Structure
 
