@@ -1,46 +1,113 @@
-# Getting Started with Create React App
+# Description
+Auto-complete component in React TypeScript.
+![Application Overview](image.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Folder Structure
 
-## Available Scripts
+The `components` directory follows an atomic design pattern, consisting of `atoms` representing the smallest UI elements and `molecules` combining multiple atoms. `Atoms` contain individual UI components like inputs and lists, while `molecules` assemble these atoms into more complex UI elements like dropdowns. Each atomic component is encapsulated within its own directory, facilitating reusability and maintainability. This modular approach allows developers to easily compose UI elements from smaller building blocks, promoting consistency and scalability across the application. The clear separation of concerns enhances code organization and facilitates collaborative development efforts within the team.
 
-In the project directory, you can run:
+```
+📁 src/
+│
+├── App.test.tsx
+│   - Test file for the main App component.
+│
+├── App.tsx
+│   - Main component responsible for rendering the application.
+│
+├── 📁 components/
+│   │
+│   ├── 📁 atoms/
+│   │   │
+│   │   ├── AtomsTypes.ts
+│   │   │   - File containing types/interfaces related to atomic components.
+│   │   │
+│   │   ├── 📁 AutoSuggestion/
+│   │   │   └── AutoSuggestion.tsx
+│   │   │       - React component for auto-suggestion functionality.
+│   │   │
+│   │   ├── 📁 Input/
+│   │   │   └── Input.tsx
+│   │   │       - React component for input fields.
+│   │   │
+│   │   └── 📁 List/
+│   │       └── List.tsx
+│   │           - React component for rendering lists.
+│   │
+│   └── 📁 molecules/
+│       │
+│       └── 📁 Dropdown/
+│           └── Dropdown.tsx
+│               - React component for dropdown functionality.
+│
+├── 📁 config/
+│   │
+│   ├── constants.ts
+│   │   - File containing application constants.
+│   │
+│   └── SharedTypes.ts
+│       - File containing shared types/interfaces.
+│
+├── 📁 context/
+│   │
+│   ├── ApiDataContext.tsx
+│   │   - React component providing context for API-related data.
+│   │
+│   └── ContextTypes.ts
+│       - File containing types/interfaces related to context.
+│
+├── 📁 hooks/
+│   │
+│   ├── types.ts
+│   │   - File containing types/interfaces related to custom hooks.
+│   │
+│   └── useApiContext.tsx
+│       - Custom hook for accessing API context.
+│
+├── index.css
+│   - Global CSS file.
+│
+├── index.tsx
+│   - Entry point of the application.
+│
+├── 📁 provider/
+│   │
+│   └── apiProvider.tsx
+│       - Custom provider for API-related functionality.
+│
+├── react-app-env.d.ts
+│   - TypeScript declaration file for environment-specific types.
+│
+├── 📁 reducers/
+│   │
+│   ├── actionTypes.ts
+│   │   - File containing action types/constants.
+│   │
+│   └── reducer.tsx
+│       - Redux reducer for managing state.
+│
+├── reportWebVitals.ts
+│   - File for reporting web vitals.
+│
+└── setupTests.ts
+    - File for setting up test environment configurations.
 
-### `npm start`
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Local environment setup
+Clone the repo and run
+### `npm run dev` :
+    Above command will `install node modules`, `run test` and `start` application.
+    After successfully installed, test and run application
+    Open **http://localhost:3000** to view it in the browser.
 
 ### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    Launches the test runner in the interactive watch mode.
+    See the section about running tests for more information.
 
 ### `npm run build`
+    Builds the app for production to the build folder.
+    It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+    The build is minified and the filenames include the hashes.
+    Your app is ready to be deployed!

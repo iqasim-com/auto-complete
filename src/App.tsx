@@ -27,18 +27,29 @@ const App = () => {
   }
 
   return (
-    <div className="wrapper">
-      <div className='input-wrapper'>
-        <Input
-          type='text'
-          placeholder='Search Products'
-          onChangeHandler={(event) => handleChange(event)} />
-        <span>{state.isLoading ? <>Fetching...</> : ''}</span>
+    <>
+      <h1>Search Products</h1>
+      <div className="wrapper">
+
+        <div className='input-wrapper'>
+          <Input
+            type='text'
+            placeholder='Search Products'
+            onChangeHandler={(event) => handleChange(event)} />
+        </div>
+        <div className='h-20'>
+            <span>{state.isLoading ? <>Fetching...</> : ''}</span>
+            {/* Check if API data is fetched, empty and searchTerm is not empty */}
+            {(state.apiData && !state.apiData.length && searchTerm !== '') && <span className='text-danger'>
+              No Products Found
+            </span>}
+          </div>
+        {/* Render dropdown if API data exists */}
+        {state.apiData?.length ? <div className="dropdown">
+          <Dropdown searchTerm={searchTerm} />
+        </div> : null}
       </div>
-      {state.apiData?.length ? <div className="dropdown">
-        <Dropdown searchTerm={searchTerm} />
-      </div> : null}
-    </div>
+    </>
   )
 }
 

@@ -41,7 +41,7 @@ const Dropdown = ({ searchTerm }: {searchTerm: string}): JSX.Element => {
     <>
       <ul>
         {state.apiData?.map((data: ApiResponseProps) => (
-          <List title={makeSearchCharBold(data.title, searchTerm)} key={data.id} />
+          state.apiData?.length != 0 ? <List title={makeSearchCharBold(data.title, searchTerm)} key={data.id} /> : <span>No Data Found</span>
         ))}
       </ul>
     </>
