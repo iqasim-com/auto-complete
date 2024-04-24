@@ -25,7 +25,7 @@ The `components` directory follows an atomic design pattern, consisting of `atom
 │   │   │
 │   │   ├── 📁 AutoSuggestion/
 │   │   │   └── AutoSuggestion.tsx
-│   │   │       - React component for auto-suggestion functionality.
+│   │   │       - React component for auto-suggestion functionality. TODO: I can add this functionality later. It about suggestions in input field while typing
 │   │   │
 │   │   ├── 📁 Input/
 │   │   │   └── Input.tsx
