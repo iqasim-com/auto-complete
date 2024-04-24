@@ -97,9 +97,9 @@ The `components` directory follows an atomic design pattern, consisting of `atom
 
 ## Local environment setup
 Clone the repo and run
-### `npm run dev` :
-    Above command will `install node modules`, `run test` and `start` application.
-    After successfully installed, test and run application
+### `npm start` :
+    Above command will `install node modules`, and `start` application.
+    After successfully installed,
     Open **http://localhost:3000** to view it in the browser.
 
 ### `npm test`
